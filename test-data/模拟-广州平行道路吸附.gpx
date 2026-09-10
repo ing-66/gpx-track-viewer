@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPX Track Viewer Test Data" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>模拟数据：广州平行道路吸附</name><time>2026-09-10T04:00:00Z</time></metadata>
+  <trk><name>模拟-广州平行道路吸附</name><trkseg>
+    <trkpt lat="23.12732" lon="113.33000"><time>2026-09-10T04:00:00Z</time></trkpt>
+    <trkpt lat="23.12726" lon="113.33100"><time>2026-09-10T04:01:00Z</time></trkpt>
+    <trkpt lat="23.12719" lon="113.33200"><time>2026-09-10T04:02:00Z</time></trkpt>
+    <trkpt lat="23.12712" lon="113.33300"><time>2026-09-10T04:03:00Z</time></trkpt>
+    <trkpt lat="23.12705" lon="113.33400"><time>2026-09-10T04:04:00Z</time></trkpt>
+    <trkpt lat="23.12698" lon="113.33500"><time>2026-09-10T04:05:00Z</time></trkpt>
+  </trkseg></trk>
+</gpx>

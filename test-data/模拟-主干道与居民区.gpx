@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPX Track Viewer Test Data" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>模拟数据：主干道与居民区</name><time>2026-09-10T00:00:00Z</time></metadata>
+  <trk><name>模拟-主干道与居民区</name><trkseg>
+    <trkpt lat="30.27410" lon="120.15120"><time>2026-09-10T00:00:00Z</time></trkpt>
+    <trkpt lat="30.27415" lon="120.15300"><time>2026-09-10T00:02:00Z</time></trkpt>
+    <trkpt lat="30.27420" lon="120.15480"><time>2026-09-10T00:04:00Z</time></trkpt>
+    <trkpt lat="30.27500" lon="120.15485"><time>2026-09-10T00:06:00Z</time></trkpt>
+    <trkpt lat="30.27575" lon="120.15490"><time>2026-09-10T00:08:00Z</time></trkpt>
+    <trkpt lat="30.27580" lon="120.15380"><time>2026-09-10T00:10:00Z</time></trkpt>
+    <trkpt lat="30.27520" lon="120.15375"><time>2026-09-10T00:12:00Z</time></trkpt>
+    <trkpt lat="30.27515" lon="120.15445"><time>2026-09-10T00:14:00Z</time></trkpt>
+    <trkpt lat="30.27575" lon="120.15450"><time>2026-09-10T00:16:00Z</time></trkpt>
+  </trkseg></trk>
+</gpx>

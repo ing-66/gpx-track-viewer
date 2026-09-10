@@ -1,0 +1,23 @@
+{
+  "name": "gpx-track-viewer",
+  "private": true,
+  "version": "1.0.0-rc.1",
+  "type": "module",
+  "scripts": {
+    "dev": "node dev-runner.js",
+    "build": "vite build",
+    "start": "node server.js",
+    "test:persistence": "node tests/persistence-test.js"
+  },
+  "dependencies": {
+    "@turf/bearing": "^7.4.0",
+    "@turf/buffer": "^7.4.0",
+    "@turf/distance": "^7.4.0",
+    "@turf/helpers": "^7.4.0",
+    "leaflet": "^1.9.4",
+    "leaflet-gpx": "^2.2.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.5"
+  }
+}

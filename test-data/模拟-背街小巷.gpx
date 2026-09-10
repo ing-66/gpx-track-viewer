@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPX Track Viewer Test Data" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>模拟数据：背街小巷</name><time>2026-09-10T01:00:00Z</time></metadata>
+  <trk><name>模拟-背街小巷</name><trkseg>
+    <trkpt lat="30.27340" lon="120.15295"><time>2026-09-10T01:00:00Z</time></trkpt>
+    <trkpt lat="30.27415" lon="120.15300"><time>2026-09-10T01:02:00Z</time></trkpt>
+    <trkpt lat="30.27475" lon="120.15305"><time>2026-09-10T01:04:00Z</time></trkpt>
+    <trkpt lat="30.27480" lon="120.15235"><time>2026-09-10T01:06:00Z</time></trkpt>
+    <trkpt lat="30.27535" lon="120.15230"><time>2026-09-10T01:08:00Z</time></trkpt>
+    <trkpt lat="30.27540" lon="120.15155"><time>2026-09-10T01:10:00Z</time></trkpt>
+    <trkpt lat="30.27610" lon="120.15150"><time>2026-09-10T01:12:00Z</time></trkpt>
+  </trkseg></trk>
+</gpx>
