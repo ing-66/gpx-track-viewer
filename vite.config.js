@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: './',
+  build: {
+    assetsInlineLimit: 100000000,
+  },
   server: {
-    proxy: {
-      '/api': 'http://127.0.0.1:8787',
-    },
+    open: true,
   },
 });

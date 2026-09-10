@@ -8,18 +8,6 @@
   </head>
   <body>
     <div id="app"></div>
-    <script>
-      if (location.protocol === 'file:') {
-        document.querySelector('#app').innerHTML = `
-          <main style="min-height:100vh;display:grid;place-items:center;padding:24px;background:#f2f5f2;font-family:'Microsoft YaHei',sans-serif;color:#17211d">
-            <section style="max-width:520px;padding:42px;background:white;border:1px solid #dfe6e1;border-radius:18px;box-shadow:0 16px 48px rgba(24,48,38,.1);text-align:center">
-              <div style="display:grid;width:52px;height:52px;margin:0 auto 20px;place-items:center;color:white;background:#176d4d;border-radius:15px;font-size:24px;font-weight:700">迹</div>
-              <h1 style="margin:0 0 12px;font-size:24px">请使用启动脚本打开</h1>
-              <p style="margin:0;color:#6f7c76;line-height:1.8">Vite 应用不能直接双击 index.html 运行。<br>请关闭本页，然后双击项目目录中的<br><strong style="color:#176d4d">启动轨迹查看器.bat</strong></p>
-            </section>
-          </main>`;
-      }
-    </script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

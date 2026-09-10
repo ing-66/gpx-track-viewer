@@ -26,7 +26,7 @@ document.querySelector('#app').innerHTML = `
           <span class="plus">＋</span><span>导入 GPX 轨迹</span>
         </label>
         <input id="gpx-input" type="file" accept=".gpx,application/gpx+xml" multiple />
-        <p class="privacy-note"><span aria-hidden="true">●</span> 文件在本机读取，可保存至本地 SQLite</p>
+        <p class="privacy-note"><span aria-hidden="true">●</span> 文件在本机读取，历史任务保存在当前浏览器</p>
       </section>
 
       <section class="display-controls" aria-label="轨迹显示设置">
@@ -527,7 +527,7 @@ document.querySelector('#task-form').addEventListener('submit', async (event) =>
   try {
     await saveCurrentTask();
     document.querySelector('#save-dialog').close();
-    showToast('任务已保存到本地数据库', 'success');
+    showToast('任务已保存到当前浏览器', 'success');
   } catch (error) { showToast(error.message, 'warning'); }
 });
 

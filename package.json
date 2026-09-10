@@ -4,10 +4,9 @@
   "version": "1.0.0-rc.1",
   "type": "module",
   "scripts": {
-    "dev": "node dev-runner.js",
-    "build": "vite build",
-    "start": "node server.js",
-    "test:persistence": "node tests/persistence-test.js"
+    "dev": "vite",
+    "build": "vite build && node scripts/build-standalone.js",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@turf/bearing": "^7.4.0",
