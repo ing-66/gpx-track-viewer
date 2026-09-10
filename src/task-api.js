@@ -100,6 +100,17 @@ async function listTasks() {
     .sort((left, right) => right.taskDate.localeCompare(left.taskDate) || right.updatedAt.localeCompare(left.updatedAt));
 }
 
+async function storageStats() {
+  const database = await openDatabase();
+  const transaction = database.transaction(['tasks', 'tracks'], 'readonly');
+  const tasks = await requestResult(transaction.objectStore('tasks').getAll());
+  const tracks = await requestResult(transaction.objectStore('tracks').getAll());
+  await transactionDone(transaction);
+  database.close();
+  const bytes = new Blob([JSON.stringify(tasks), JSON.stringify(tracks)]).size;
+  return { taskCount: tasks.length, trackCount: tracks.length, bytes };
+}
+
 async function removeTask(id) {
   const database = await openDatabase();
   const transaction = database.transaction(['tasks', 'tracks'], 'readwrite');
@@ -127,5 +138,5 @@ async function removeTrack(taskId, trackId) {
 
 export const taskApi = {
   list: listTasks, get: fullTask, create: (task) => saveTask(task), update: (id, task) => saveTask(task, id),
-  remove: removeTask, removeTrack,
+  remove: removeTask, removeTrack, stats: storageStats,
 };

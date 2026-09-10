@@ -75,7 +75,7 @@ document.querySelector('#app').innerHTML = `
 
       <footer class="sidebar-footer">
         <button id="clear-all" class="clear-button" type="button" disabled>清空全部轨迹</button>
-        <p>原始 GPS 坐标按文件内容直接呈现</p>
+        <p id="storage-usage">本地存储占用：正在读取…</p>
       </footer>
     </aside>
 
@@ -265,6 +265,7 @@ async function deleteTrack(track) {
     tracks.splice(tracks.indexOf(track), 1);
     track.row.remove();
     updateUi();
+    if (synced) await updateStorageUsage();
     showToast(synced ? '轨迹已删除并同步数据库' : '轨迹已删除');
   } catch (error) {
     showToast(error.message, 'warning');
@@ -398,6 +399,7 @@ async function clearTracks(syncDatabase = false) {
   tracks.length = 0;
   list.replaceChildren();
   updateUi();
+  if (syncDatabase) await updateStorageUsage();
 }
 
 clearButton.addEventListener('click', async () => {
@@ -435,6 +437,23 @@ async function saveCurrentTask() {
   currentTask.id = saved.id;
   saved.tracks.forEach((savedTrack, index) => { if (tracks[index]) tracks[index].dbId = savedTrack.id; });
   updateUi();
+  await updateStorageUsage();
+}
+
+function formatStorageSize(bytes) {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(bytes < 10 * 1024 ? 1 : 0)} KB`;
+  return `${(bytes / 1024 / 1024).toFixed(bytes < 10 * 1024 * 1024 ? 1 : 0)} MB`;
+}
+
+async function updateStorageUsage() {
+  const label = document.querySelector('#storage-usage');
+  try {
+    const stats = await taskApi.stats();
+    label.textContent = `本地存储占用：${stats.taskCount} 个任务 · ${stats.trackCount} 条轨迹 · ${formatStorageSize(stats.bytes)}`;
+  } catch {
+    label.textContent = '本地存储占用：暂时无法读取';
+  }
 }
 
 function formatTaskDate(value) {
@@ -470,6 +489,7 @@ async function renderHistory() {
           updateUi();
         }
         await renderHistory();
+        await updateStorageUsage();
         showToast('历史任务已删除');
       } catch (error) { showToast(error.message, 'warning'); }
     }));
@@ -564,3 +584,4 @@ document.querySelector('#custom-radius').addEventListener('input', (event) => {
   }
 });
 updateUi();
+updateStorageUsage();
